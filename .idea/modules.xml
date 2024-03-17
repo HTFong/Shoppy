@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Shoppy.iml" filepath="$PROJECT_DIR$/.idea/Shoppy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShoppyProject/ShoppyWebParent/ShoppyBackend/ShoppyBackend.iml" filepath="$PROJECT_DIR$/ShoppyProject/ShoppyWebParent/ShoppyBackend/ShoppyBackend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShoppyProject/ShoppyCommon/ShoppyCommon.iml" filepath="$PROJECT_DIR$/ShoppyProject/ShoppyCommon/ShoppyCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShoppyProject/ShoppyWebParent/ShoppyFrontend/ShoppyFrontend.iml" filepath="$PROJECT_DIR$/ShoppyProject/ShoppyWebParent/ShoppyFrontend/ShoppyFrontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShoppyProject/ShoppyProject.iml" filepath="$PROJECT_DIR$/ShoppyProject/ShoppyProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShoppyProject/ShoppyWebParent/ShoppyWebParent.iml" filepath="$PROJECT_DIR$/ShoppyProject/ShoppyWebParent/ShoppyWebParent.iml" />
+    </modules>
+  </component>
+</project>
