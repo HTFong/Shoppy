@@ -12,11 +12,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ShoppyBackend" target="17" />
-      <module name="ShoppyCommon" target="17" />
-      <module name="ShoppyFrontend" target="17" />
+      <module name="ShoppyBackend" target="16" />
+      <module name="ShoppyCommon" target="16" />
+      <module name="ShoppyFrontend" target="16" />
       <module name="ShoppyProject" target="1.5" />
-      <module name="ShoppyWebParent" target="17" />
+      <module name="ShoppyWebParent" target="16" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -24,7 +24,7 @@
       <module name="ShoppyBackend" options="-parameters" />
       <module name="ShoppyCommon" options="-parameters" />
       <module name="ShoppyFrontend" options="-parameters" />
-      <module name="ShoppyWebParent" options="-parameters" />
+      <module name="ShoppyWebParent" options="" />
     </option>
   </component>
 </project>
