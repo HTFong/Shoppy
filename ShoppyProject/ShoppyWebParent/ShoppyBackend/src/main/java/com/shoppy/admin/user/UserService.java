@@ -4,6 +4,10 @@ import com.shoppy.common.entity.Role;
 import com.shoppy.common.entity.User;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +27,14 @@ public class UserService {
 
     public List<User> listAll() {
         return (List<User>) userRepo.findAll();
+    }
+
+    public Page<User> listAllByPage(int pageNumber, int pageSize, String sortField, String sortDirect) {
+        Sort sort = sortDirect.equalsIgnoreCase("asc")
+                ? Sort.by(sortField).ascending()
+                : Sort.by(sortField).descending();
+        Pageable pageable = PageRequest.of(pageNumber - 1,pageSize,sort);
+        return userRepo.findAll(pageable);
     }
 
     public List<Role> listRoles() {

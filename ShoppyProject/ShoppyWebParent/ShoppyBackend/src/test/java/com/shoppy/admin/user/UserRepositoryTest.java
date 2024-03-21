@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
@@ -73,5 +76,14 @@ public class UserRepositoryTest {
     public void testChangeEnabledStatus() {
         userRepo.updateEnabledStatus(true,3);
         userRepo.updateEnabledStatus(false,4);
+    }
+    @Test
+    public void trstListFirstPage() {
+        int pageNumber = 0;
+        int pageSize = 4;
+        Pageable pageable = PageRequest.of(pageNumber,pageSize);
+        Page<User> page = userRepo.findAll(pageable);
+
+        assertThat(page.getContent().size()).isEqualTo(pageSize);
     }
 }
