@@ -78,12 +78,16 @@ public class UserRepositoryTest {
         userRepo.updateEnabledStatus(false,4);
     }
     @Test
-    public void trstListFirstPage() {
+    public void testListFirstPage() {
         int pageNumber = 0;
         int pageSize = 4;
         Pageable pageable = PageRequest.of(pageNumber,pageSize);
         Page<User> page = userRepo.findAll(pageable);
 
         assertThat(page.getContent().size()).isEqualTo(pageSize);
+    }
+    @Test
+    public void testFindByKeyword() {
+        userRepo.findByKeyword("a",PageRequest.of(0,5)).forEach(u -> System.out.println(u));
     }
 }

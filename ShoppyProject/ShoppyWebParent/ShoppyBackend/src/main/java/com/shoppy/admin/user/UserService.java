@@ -29,12 +29,15 @@ public class UserService {
         return (List<User>) userRepo.findAll();
     }
 
-    public Page<User> listAllByPage(int pageNumber, int pageSize, String sortField, String sortDirect) {
+    public Page<User> listAllByPage(int pageNumber, int pageSize, String sortField, String sortDirect, String keyword) {
         Sort sort = sortDirect.equalsIgnoreCase("asc")
                 ? Sort.by(sortField).ascending()
                 : Sort.by(sortField).descending();
         Pageable pageable = PageRequest.of(pageNumber - 1,pageSize,sort);
-        return userRepo.findAll(pageable);
+
+        return keyword!=null
+                ? userRepo.findByKeyword(keyword,pageable)
+                : userRepo.findAll(pageable);
     }
 
     public List<Role> listRoles() {
